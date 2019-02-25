@@ -1,23 +1,22 @@
 import React from "react"
-import Helmet from "react-helmet"
 import { graphql } from "gatsby"
-const path = require("path")
+import "./coc.css"
 
-export default function Template ({ data })
-{
-    const { markdownRemark: post } = data
+const CoC = ({ data }) => {
+    console.log(data.markdownRemark)
 
     return (
         <div className="coc">
-            <Helmet title={`${post.frontmatter.title}`} ></Helmet>
-            <div className="coccontents" dangerouslySetInnerHTML={{ __html: post.html }} ></div>
+            <div className="coccontents" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} ></div>
         </div>
     )
 }
 
+export default CoC
+
 export const pageQuery = graphql`
-    query($path: String!) {
-        markdownRemark(frontmatter: { path: { eq: $path }}) {
+    query {
+        markdownRemark {
             html
         }
     }

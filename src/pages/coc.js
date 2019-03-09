@@ -1,12 +1,11 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import "./coc.css"
 
 const CoC = ({ data }) => {
-    console.log(data.markdownRemark)
-
     return (
         <div className="coc">
+            <h1><Link to="/">たまもく</Link></h1>
             <div className="coccontents" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} ></div>
         </div>
     )

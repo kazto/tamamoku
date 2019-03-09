@@ -1,4 +1,7 @@
 .container {
-    background-image: '../images/achievement-agreement-arms-1068523.jpg';
+    background-image: '../images/bggray.jpg';
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 120vh;
     margin: 100px;
 }
